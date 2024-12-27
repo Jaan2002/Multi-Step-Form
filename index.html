@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Multi Step Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <form id="form1" class="multi-step-form">
+      <h3>PERSONAL DETAILS</h3>
+      <input type="text" id="fullName" placeholder="Full Name" minlength="3">
+      <span class="error-message" id="fullName-error"></span>
+      <input type="email" id="email" placeholder="Email" required>
+      <span class="error-message" id="email-error"></span>
+      <input type="tel" id="phone" placeholder="Phone No" required pattern="\d{10}">
+      <span class="error-message" id="phone-error"></span>
+      <input type="number" id="age" name="age" placeholder="Age" min="18" max="100" required>
+      <span class="error-message" id="age-error"></span>
+
+      <label >Gender</label>
+      <label class="radio-inline">
+        <input type="radio" name="gender" value="male" required> Male
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="gender" value="Female" required> Female
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="gender" value="Other">Other
+      </label>
+      <span class="error-message" id="gender-error"></span>
+      
+      <div class="btn-box">
+        <button type="button" id="Next1">Next</button>
+      </div>
+      
+    </form>
+
+    <form id="form2">
+      <h3>Professional Details</h3>
+    
+      <div class="dropdown">
+        <label for="education">Education</label>
+        <select id="education" name="education" required>
+          <option value="" disabled selected>Select Education</option>
+          <option value="High School">High School</option>
+          <option value="Bachelor's Degree">Bachelor's Degree</option>
+          <option value="Master's Degree">Master's Degree</option>
+          <option value="PhD">PhD</option>
+        </select>
+        <span class="error-message" id="education-error"></span>
+      </div>
+    
+      <div class="checkbox-group">
+        <label>Skills</label>
+        <label><input type="checkbox" name="skills" value="programming"> Programming</label>
+        <label><input type="checkbox" name="skills" value="marketing"> Marketing</label>
+        <label><input type="checkbox" name="skills" value="design"> Design</label>
+        <span class="error-message" id="skills-error"></span>
+      </div>
+    
+      <div class="input-group">
+        <label for="experience">Experience</label>
+        <input type="number" id="experience" name="experience" min="0" max="50" placeholder="Enter years..." required>
+        <span class="error-message" id="experience-error"></span>
+      </div>
+    
+      <div class="input-group">
+        <label for="currentRole">Current Role</label>
+        <input type="text" id="currentRole" name="currentRole" placeholder="Your current role" required>
+        <span class="error-message" id="currentRole-error"></span>
+      </div>
+    
+      <div class="btn-box">
+        <button type="button" id="Back1">Previous</button>
+        <button type="button" id="Next2">Next</button>
+      </div>
+    </form>
+    
+  <!--Review-->
+  <form id="form3">
+    <h3>Review & Submit</h3>
+    <button type="button" id="exportData">Export as JSON</button>
+    <button type="button" id="clearForm">Clear Form</button>
+    <div id="reviewSection"></div>
+    <div class="btn-box">
+    
+      <button type="button" id="Back2">Edit</button>
+      <button type="submit" id="Submit" >Submit</button>
+      <p class="success-message" id="successMessage" style="display:none;color:rgb(2, 65, 2);">Form submitted successfully!</p>
+    </div>
+    
+   <pre id="jsonPreview"></pre>
+ 
+   
+  </form>
+  
+  <div class="step-row">
+    <div id="progress"></div>
+    <div class="step-col"><small>Step 1</small></div>
+    <div class="step-col"><small>Step 2</small></div>
+    <div class="step-col"><small>Step 3</small></div>
+  </div>
+
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
